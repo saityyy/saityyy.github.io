@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.saity.dev/categories/</loc>
+    <loc>https://www.saity.dev/posts/my-first-post/</loc>
+    <lastmod>2023-10-08T22:29:21+09:00</lastmod>
+  </url><url>
+    <loc>https://www.saity.dev/posts/</loc>
+    <lastmod>2023-10-08T22:29:21+09:00</lastmod>
   </url><url>
     <loc>https://www.saity.dev/</loc>
+    <lastmod>2023-10-08T22:29:21+09:00</lastmod>
+  </url><url>
+    <loc>https://www.saity.dev/categories/</loc>
   </url><url>
     <loc>https://www.saity.dev/tags/</loc>
   </url>
