@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>saity dev</title>
-    <link>https://saity.dev/</link>
+    <link>https://www.saity.dev/</link>
     <description>Recent content on saity dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language><atom:link href="https://saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Me</title>
-      <link>https://saity.dev/about/</link>
+      <link>https://www.saity.dev/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://saity.dev/about/</guid>
+      <guid>https://www.saity.dev/about/</guid>
       
       <description>所属 明治大学大学院　先端数理科学研究科　先端メディアサイエンス専攻　M1
 興味があること プログラミング Pythonをよく書きます。主に機械学習、統計処理、webバックエンド実装(Django,Flask)、簡単な自動化プログラム、スクレイピングなどの用途で使用しています。 JS,Reactなどのフロントエンドのフレームワークも使用経験がありますが、バックエンドのほうが好きです。あとは競技プログラミングでC++、isuconでGolangも多少やりますが熟練度は高くないです。
