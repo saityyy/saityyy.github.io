@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>saity dev</title>
-    <link>https://www.saity.dev/</link>
-    <description>Recent content on saity dev</description>
+    <title>Posts on saity dev</title>
+    <link>https://www.saity.dev/posts/</link>
+    <description>Recent content in Posts on saity dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 27 Nov 2023 16:31:21 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>About Me</title>
-      <link>https://www.saity.dev/about/</link>
-      <pubDate>Tue, 28 Nov 2023 00:00:00 +0900</pubDate>
-      
-      <guid>https://www.saity.dev/about/</guid>
-      
-      <description>所属 明治大学大学院　先端数理科学研究科　先端メディアサイエンス専攻　M1
-やること プログラミング Pythonをよく書きます。主に機械学習、統計処理、webバックエンド実装(Django,Flask)、簡単な自動化プログラム、スクレイピングなどの用途で使用しています。 JS,Reactなどのフロントエンドのフレームワークも使用経験がありますが、バックエンドのほうが好きです。あとは競技プログラミングでC++、isuconでGolangも多少やりますが熟練度は高くないです。
-機械学習 学部時代にpytorchで画像認識をしていました。今はChatGPTのような大規模言語モデルにも関心があります。イラストや写真などの画像生成(VAE,GAN)にも興味がありましたが、拡散モデルの普及以降、技術進歩が凄まじくてついていけてないです（単純に関心がなくなってきているというのもある）。
-NW,DBなどのインフラ技術 ネットワーク(DB)やデータベース(DB)系の技術に興味があります。特にNWに関しては、アプリケーション層のような身近に感じられるような技術から表面上隠蔽されて見えないような低層の技術(1,2,3,4層あたり)にまで全体的に関心があります。DBは興味はありますが、まだまだ勉強不足です。
-いままでしてきたこと 授業の自由課題で探索アルゴリズムを実装し、グラフィカルなアプリとしてデモ＆発表をした(2019.7) 自作ゲーミングPCを組む(2019.8) G検定,E資格取得、AIに関する基礎知識習得(2019.11) Atcoder入茶(2020.7) ハッカソン チーム(4人)でweb開発(2020.11) pytorchで顔画像検出プログラム作成。aws環境にデプロイ(lambdaを使用) Flaskで割り勘LINEボット作成(2021.5) ハッカソン チーム(3人)でweb開発(2021.7) Dockerでwordpress環境構築(2021.7) pytorchで顔画像検出プログラム作成。aws環境にデプロイ(lambdaを使用)(2021.8) 応用情報技術者試験合格(2022.10) SNSサービス,Linkelli作成(2023.9)
-Linkelli=&amp;gt; https://linkelli.net
-github=&amp;gt; https://github.com/saityyy/Linkelli isucon13にチームで参加( isucon13に参加しました。 ) 今やっていること(2023.11/28) NWに関する書籍を読む(マスタリングTCP/IPとか) Go言語の勉強 </description>
-      
-    </item>
-    
+    <lastBuildDate>Mon, 27 Nov 2023 16:31:21 +0900</lastBuildDate><atom:link href="https://www.saity.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>isucon13に参加しました</title>
       <link>https://www.saity.dev/posts/isucon13_result/</link>

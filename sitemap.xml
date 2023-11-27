@@ -3,10 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.saity.dev/about/</loc>
+    <lastmod>2023-11-28T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://www.saity.dev/categories/</loc>
+    <loc>https://www.saity.dev/posts/isucon13_result/</loc>
+    <lastmod>2023-11-27T16:31:21+09:00</lastmod>
+  </url><url>
+    <loc>https://www.saity.dev/posts/</loc>
+    <lastmod>2023-11-27T16:31:21+09:00</lastmod>
   </url><url>
     <loc>https://www.saity.dev/</loc>
+    <lastmod>2023-11-27T16:31:21+09:00</lastmod>
+  </url><url>
+    <loc>https://www.saity.dev/categories/</loc>
   </url><url>
     <loc>https://www.saity.dev/tags/</loc>
   </url>
