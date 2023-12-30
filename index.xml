@@ -6,7 +6,35 @@
     <description>Recent content on saity dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 28 Nov 2023 10:52:34 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Dec 2023 08:55:11 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows11の再インストール手順をマニュアル化</title>
+      <link>https://www.saity.dev/posts/windows_init/</link>
+      <pubDate>Wed, 27 Dec 2023 08:55:11 +0900</pubDate>
+      
+      <guid>https://www.saity.dev/posts/windows_init/</guid>
+      
+      <description>はじめに これまでWindowsの再インストールは何度かやってきましたが、バックアップの確認、再インストール手順の確認、インストールされていたソフトや設定ファイルの内容を思い出すなど、やることが多くて毎回苦労していました。
+そこで、今回はWindowsの再インストールの手順や注意事項、インストール自動化（完全に自動ではない）スクリプトをまとめたリポジトリを作成して、Windows再インストール手順のマニュアルを作成しました。Windowsの再インストールが面倒くさいと感じている方や、Windowsをこれから使うというような方に、なにか役立つ情報を共有できればいいなと思っています。
+(注意: Windowsのインストール完了までの詳しい手順はここではあまり詳しくは書かないので、公式のドキュメントや別のサイトを参考にするようにしてください。)
+バックアップをとっておく 必要なものをバックアップとして別のドライブ、またはUSBメモリにコピーしておきましょう。ちなみに自分は必要なデータはほぼOneDriveや別ドライブに保存しているため、バックアップはsshの秘密鍵が格納されている.sshフォルダのみで十分でした。あとvscodeの設定ファイルとかもありますね。面倒であれば、Usersフォルダごとバックアップを取るでもいいかもしれないです。
+インストールメディアを作成する 16Gb以上のUSBを使ってWindowsのインストールメディアを作成します。
+下記リンクにある上から３つ目の項目からISOファイルをダウンロードします。
+https://www.microsoft.com/en-us/software-download/Windows11
+続いて、rufusと呼ばれるisoファイルからインストールメディアを作成するツールをダウンロードします。
+https://forest.watch.impress.co.jp/library/software/rufus/
+このrufusを起動して、先程ダウンロードしたisoファイルと使うUSBメモリを指定してインストールメディアを作成します。
+Windowsをインストールする Bios画面を開き、指定のUSBが起動するように設定します。もう一度再起動すると、Windowsのインストール画面が表示されるので、決まった手順でインストールまで進めます。
+wingetでgitをインストール シェルスクリプトでwingetを回したいので、git bashをとりあえず手動でインストールします。
+winget install -e -i Git.Git (注意：wingetでこのコマンドを実行しても反応がなくて、うまくいかないことがありました。自分はwingetのバージョンを最新のものにすることで解消できました。
+実際の手順は以下のブログが参考になるかもしれないです。
+https://zenn.dev/kawamasato/articles/11c4477e101374)
+セットアップ用のシェルスクリプトファイルを実行する。 インストールしたいツールやアプリのインストーラーを順番に実行していきます。 git bashを開き、以下のコマンドを実行します。
+bash setup.sh 自分が使ったファイルの中身は以下のようになっています。
+#Install Software #Tool winget install -e -i 7zip.7zip # 解凍,圧縮ソフト winget install -e -i CPUID.HWMonitor # CPU,GPUなどの状態監視ツール winget install -e -i Maxon.CinebenchR23 # CPU ベンチマーク計測ソフト winget install -e -i CrystalDewWorld.CrystalDiskInfo # SSD 状態管理 winget install -e -i CrystalDewWorld.</description>
+      
+    </item>
+    
     <item>
       <title>得られたネットワーク知識まとめ(ネットワークはなぜつながるのか)</title>
       <link>https://www.saity.dev/posts/network_tips/</link>
