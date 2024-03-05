@@ -6,7 +6,19 @@
     <description>Recent content on saity dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 27 Dec 2023 08:55:11 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Mar 2024 14:09:26 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>線形代数の学び直し[線形代数のエッセンス]</title>
+      <link>https://www.saity.dev/posts/vector_study/</link>
+      <pubDate>Tue, 05 Mar 2024 14:09:26 +0900</pubDate>
+      
+      <guid>https://www.saity.dev/posts/vector_study/</guid>
+      
+      <description>3Blue1Brownが出している線形代数のエッセンス(https://youtube.com/playlist?list=PL5WufEA7WHQGX7Su06JzbPDXUQGOd0wlq&amp;amp;si=x98fuVYKHjpSN0PE)が見ていて学び直しにとても役に立ったと感じました。学び直しだけでなく、これから線形代数を学ぶという方にもおすすめできる内容だと思いました。自分はこれを見て、今まで適当に線形代数をやっていたんだと思い知らされました。 具体的には&amp;hellip;
+Spanや基底ベクトルについての理解。特にspanが何を表しているのかをしっかり理解できました。 正方行列、非正方行列の意味やそれによる変換がやっていることについて。平面上にある格子線が変形されていくアニメーションがとてもわかりやすい。 行列式がなにを表しているか。 内積や外積の意味について。特に内積がなぜ各要素の積の総和を取るのかがよくわかりました。 クラメルの公式の導出をちゃんと理解できました。今まで丸暗記していました。。 固有値や固有ベクトルが何を表しているかについて。定義からみてもなんとなくわかりますが、アニメーションによる説明で理解が深まりました。 今まで適当にながしていた用語や数式の意味をある程度知ることが出来ました。(span,行列式,rank,trace,kernelなど) これ以外にも、重要な知識や考え方が説明されていたので、定期的に復習し直すのが良いと思いました。</description>
+      
+    </item>
+    
     <item>
       <title>Windows11の再インストール手順をマニュアル化</title>
       <link>https://www.saity.dev/posts/windows_init/</link>

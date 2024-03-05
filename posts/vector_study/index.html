@@ -3,11 +3,11 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Windows11の再インストール手順をマニュアル化 | saity dev</title>
-<meta property="og:title" content="Windows11の再インストール手順をマニュアル化 | saity dev" />
-<meta name="twitter:title" content="Windows11の再インストール手順をマニュアル化 | saity dev" />
-<meta itemprop="name" content="Windows11の再インストール手順をマニュアル化 | saity dev" />
-<meta name="application-name" content="Windows11の再インストール手順をマニュアル化 | saity dev" />
+<title itemprop="name">線形代数の学び直し[線形代数のエッセンス] | saity dev</title>
+<meta property="og:title" content="線形代数の学び直し[線形代数のエッセンス] | saity dev" />
+<meta name="twitter:title" content="線形代数の学び直し[線形代数のエッセンス] | saity dev" />
+<meta itemprop="name" content="線形代数の学び直し[線形代数のエッセンス] | saity dev" />
+<meta name="application-name" content="線形代数の学び直し[線形代数のエッセンス] | saity dev" />
 <meta property="og:site_name" content="" />
 
 <meta name="description" content="">
@@ -34,8 +34,8 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2023-12-27T08:55:11&#43;0900 />
-    <meta property="article:published_time" content=2023-12-27T08:55:11&#43;0900 />
+    <meta property="og:article:published_time" content=2024-03-05T14:09:26&#43;0900 />
+    <meta property="article:published_time" content=2024-03-05T14:09:26&#43;0900 />
 
     
 
@@ -45,16 +45,16 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Windows11の再インストール手順をマニュアル化",
+        "headline": "線形代数の学び直し[線形代数のエッセンス]",
         "author": {
         "@type": "Person",
         "name": ""
         },
-        "datePublished": "2023-12-27",
+        "datePublished": "2024-03-05",
         "description": "",
-        "wordCount":  203 ,
+        "wordCount":  10 ,
         "mainEntityOfPage": "True",
-        "dateModified": "2023-12-27",
+        "dateModified": "2024-03-05",
         "image": {
         "@type": "imageObject",
         "url": ""
@@ -71,7 +71,7 @@
 
     
 
-    <link rel="canonical" href="https://www.saity.dev/posts/windows_init/">
+    <link rel="canonical" href="https://www.saity.dev/posts/vector_study/">
     <link href="/style.min.9bd04d0fad85388343088ec85e9afd787ea003e72914d7f57df39c17ab2e7173.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -163,89 +163,26 @@ stroke-linejoin="round" class="feather feather-home">
     <main class="page-content" aria-label="Content">
         <article>
             <header class="header">
-                <h1 class="header-title">Windows11の再インストール手順をマニュアル化</h1>
+                <h1 class="header-title">線形代数の学び直し[線形代数のエッセンス]</h1>
                 
                 
                 <div class="post-meta">
-                    <time datetime="2023-12-27T08:55:11&#43;09:00" itemprop="datePublished"> 2023/12/27 </time>
+                    <time datetime="2024-03-05T14:09:26&#43;09:00" itemprop="datePublished"> 2024/03/05 </time>
                 </div>
                 
             </header><div class="page-content">
-                <h1 id="はじめに">はじめに</h1>
-<p>これまでWindowsの再インストールは何度かやってきましたが、バックアップの確認、再インストール手順の確認、インストールされていたソフトや設定ファイルの内容を思い出すなど、やることが多くて毎回苦労していました。<br>
-そこで、今回はWindowsの再インストールの手順や注意事項、インストール自動化（完全に自動ではない）スクリプトをまとめたリポジトリを作成して、Windows再インストール手順のマニュアルを作成しました。Windowsの再インストールが面倒くさいと感じている方や、Windowsをこれから使うというような方に、なにか役立つ情報を共有できればいいなと思っています。<br>
-(<font color="Red">注意</font>: Windowsのインストール完了までの詳しい手順はここではあまり詳しくは書かないので、公式のドキュメントや別のサイトを参考にするようにしてください。)</p>
-<h1 id="バックアップをとっておく">バックアップをとっておく</h1>
-<p>必要なものをバックアップとして別のドライブ、またはUSBメモリにコピーしておきましょう。ちなみに自分は必要なデータはほぼOneDriveや別ドライブに保存しているため、バックアップはsshの秘密鍵が格納されている.sshフォルダのみで十分でした。あとvscodeの設定ファイルとかもありますね。面倒であれば、Usersフォルダごとバックアップを取るでもいいかもしれないです。</p>
-<h1 id="インストールメディアを作成する">インストールメディアを作成する</h1>
-<p>16Gb以上のUSBを使ってWindowsのインストールメディアを作成します。<br>
-下記リンクにある上から３つ目の項目からISOファイルをダウンロードします。<br>
-<a href="https://www.microsoft.com/en-us/software-download/Windows11">https://www.microsoft.com/en-us/software-download/Windows11</a><br>
-続いて、rufusと呼ばれるisoファイルからインストールメディアを作成するツールをダウンロードします。<br>
-<a href="https://forest.watch.impress.co.jp/library/software/rufus/">https://forest.watch.impress.co.jp/library/software/rufus/</a><br>
-このrufusを起動して、先程ダウンロードしたisoファイルと使うUSBメモリを指定してインストールメディアを作成します。</p>
-<h1 id="windowsをインストールする">Windowsをインストールする</h1>
-<p>Bios画面を開き、指定のUSBが起動するように設定します。もう一度再起動すると、Windowsのインストール画面が表示されるので、決まった手順でインストールまで進めます。</p>
-<h1 id="wingetでgitをインストール">wingetでgitをインストール</h1>
-<p>シェルスクリプトでwingetを回したいので、git bashをとりあえず手動でインストールします。</p>
-<pre tabindex="0"><code>winget install -e -i Git.Git
-</code></pre><p>(<font color="Red">注意</font>：wingetでこのコマンドを実行しても反応がなくて、うまくいかないことがありました。自分はwingetのバージョンを最新のものにすることで解消できました。<br>
-実際の手順は以下のブログが参考になるかもしれないです。<br>
-<a href="https://zenn.dev/kawamasato/articles/11c4477e101374">https://zenn.dev/kawamasato/articles/11c4477e101374</a>)</p>
-<h1 id="セットアップ用のシェルスクリプトファイルを実行する">セットアップ用のシェルスクリプトファイルを実行する。</h1>
-<p>インストールしたいツールやアプリのインストーラーを順番に実行していきます。
-git bashを開き、以下のコマンドを実行します。</p>
-<pre tabindex="0"><code>bash setup.sh
-</code></pre><p>自分が使ったファイルの中身は以下のようになっています。</p>
-<pre tabindex="0"><code>#Install Software
-
-#Tool
-winget install -e -i 7zip.7zip # 解凍,圧縮ソフト
-winget install -e -i CPUID.HWMonitor # CPU,GPUなどの状態監視ツール
-winget install -e -i Maxon.CinebenchR23 # CPU ベンチマーク計測ソフト
-winget install -e -i CrystalDewWorld.CrystalDiskInfo # SSD 状態管理 
-winget install -e -i CrystalDewWorld.CrystalDiskMark # SSD ベンチマーク計測ソフト
-winget install -e -i Nvidia.GeForceExperience
-winget install -e -i Google.Chrome
-winget install -e -i Mozilla.Firefox
-winget install -e -i Amazon.Kindle
-winget install -e -i Spotify.Spotify  
-
-#Communication
-winget install -e -i Discord.Discord
-winget install -e -i LINE.LINE
-winget install -e -i Zoom.Zoom
-winget install -e -i SlackTechnologies.Slack  
-
-#Development
-winget install -e -i Microsoft.WindowsTerminal
-winget install -e -i Docker.DockerDesktop
-winget install -e -i Oracle.VirtualBox
-winget install -e -i Hashicorp.Vagrant
-winget install -e -i Canonical.Ubuntu.2204
-winget install -e -i GoLang.Go
-winget install -e -i Python.Python.3.12
-winget install -e -i OpenJS.NodeJS.LTS
-winget install -e -i Microsoft.VisualStudioCode  
-
-#Game
-# !!!インストール先は別ドライブがいいかも(ない場合はデフォルトで問題ない)
-winget install -e -i Valve.Steam
-winget install -e -i EpicGames.EpicGamesLauncher 
-winget install -e -i RiotGames.Valorant.AP
-</code></pre><p>インストールしたいアプリやしなくてもいいアプリがあれば行を追加したり削除したりすれば問題ないです。<br>
-もし、これら以外にもインストールしたいときには、<code>winget search ～キーワード～</code>によってインストールできるものがあるかどうかを探すことができます。結構いろいろあるので試してみてください。</p>
-<p>i(interactive)オプションを外すことによって、ほぼ全自動でインストールすることも可能ですが、インストール先やショートカットを作成しないなどの設定を自分でできないというデメリットがあります。特に気にしないのであれば外してもいいかもしれません。</p>
-<h1 id="その他やること">その他やること</h1>
+                <p>3Blue1Brownが出している線形代数のエッセンス(<a href="https://youtube.com/playlist?list=PL5WufEA7WHQGX7Su06JzbPDXUQGOd0wlq&amp;si=x98fuVYKHjpSN0PE">https://youtube.com/playlist?list=PL5WufEA7WHQGX7Su06JzbPDXUQGOd0wlq&amp;si=x98fuVYKHjpSN0PE</a>)が見ていて学び直しにとても役に立ったと感じました。学び直しだけでなく、これから線形代数を学ぶという方にもおすすめできる内容だと思いました。自分はこれを見て、今まで適当に線形代数をやっていたんだと思い知らされました。
+具体的には&hellip;</p>
 <ul>
-<li>周辺デバイスに関するソフトウェアのインストール。これは手動で公式サイトからダウンロードすると良いと思います。</li>
-<li>サービスへのログインやアカウントの作成(microsoft google amazon spotify X など)。後々面倒なので、インストール処理中の時に済ませましょう。</li>
-<li>.sshやvscodeなどにある設定ファイルの復元。バックアップしたものからコピーしてきましょう</li>
-<li>Windowsの設定(スタートアップアプリの選別、タスクバー、OneDriveの設定など)</li>
-<li>デバイスの設定確認(リフレッシュレート、マウス感度、ボタン割り当てなど)</li>
+<li>Spanや基底ベクトルについての理解。特にspanが何を表しているのかをしっかり理解できました。</li>
+<li>正方行列、非正方行列の意味やそれによる変換がやっていることについて。平面上にある格子線が変形されていくアニメーションがとてもわかりやすい。</li>
+<li>行列式がなにを表しているか。</li>
+<li>内積や外積の意味について。特に内積がなぜ各要素の積の総和を取るのかがよくわかりました。</li>
+<li>クラメルの公式の導出をちゃんと理解できました。今まで丸暗記していました。。</li>
+<li>固有値や固有ベクトルが何を表しているかについて。定義からみてもなんとなくわかりますが、アニメーションによる説明で理解が深まりました。</li>
+<li>今まで適当にながしていた用語や数式の意味をある程度知ることが出来ました。(span,行列式,rank,trace,kernelなど)</li>
 </ul>
-<h1 id="最後に">最後に</h1>
-<p>結構面倒だった一連の処理をマニュアル化して、Windowsを再インストールしやすくできました。自動化とまではいかないですが、それなりに考えることが減って楽になりました。</p>
+<p>これ以外にも、重要な知識や考え方が説明されていたので、定期的に復習し直すのが良いと思いました。</p>
 
             </div>
         </article></main>
