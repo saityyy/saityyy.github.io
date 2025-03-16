@@ -3,11 +3,11 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">線形代数の学び直し[線形代数のエッセンス] | saity dev</title>
-<meta property="og:title" content="線形代数の学び直し[線形代数のエッセンス] | saity dev" />
-<meta name="twitter:title" content="線形代数の学び直し[線形代数のエッセンス] | saity dev" />
-<meta itemprop="name" content="線形代数の学び直し[線形代数のエッセンス] | saity dev" />
-<meta name="application-name" content="線形代数の学び直し[線形代数のエッセンス] | saity dev" />
+<title itemprop="name">ABC221 C問題 別解 | saity dev</title>
+<meta property="og:title" content="ABC221 C問題 別解 | saity dev" />
+<meta name="twitter:title" content="ABC221 C問題 別解 | saity dev" />
+<meta itemprop="name" content="ABC221 C問題 別解 | saity dev" />
+<meta name="application-name" content="ABC221 C問題 別解 | saity dev" />
 <meta property="og:site_name" content="" />
 
 <meta name="description" content="">
@@ -34,8 +34,8 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2024-03-05T14:09:26&#43;0900 />
-    <meta property="article:published_time" content=2024-03-05T14:09:26&#43;0900 />
+    <meta property="og:article:published_time" content=2025-03-16T19:34:55&#43;0900 />
+    <meta property="article:published_time" content=2025-03-16T19:34:55&#43;0900 />
 
     
 
@@ -45,16 +45,16 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "線形代数の学び直し[線形代数のエッセンス]",
+        "headline": "ABC221 C問題 別解",
         "author": {
         "@type": "Person",
         "name": ""
         },
-        "datePublished": "2024-03-05",
+        "datePublished": "2025-03-16",
         "description": "",
-        "wordCount":  10 ,
+        "wordCount":  34 ,
         "mainEntityOfPage": "True",
-        "dateModified": "2024-03-05",
+        "dateModified": "2025-03-16",
         "image": {
         "@type": "imageObject",
         "url": ""
@@ -71,7 +71,7 @@
 
     
 
-    <link rel="canonical" href="https://www.saity.dev/posts/vector_study/">
+    <link rel="canonical" href="https://www.saity.dev/posts/abc221c_other_solution/">
     <link href="/style.min.9bd04d0fad85388343088ec85e9afd787ea003e72914d7f57df39c17ab2e7173.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -163,26 +163,41 @@ stroke-linejoin="round" class="feather feather-home">
     <main class="page-content" aria-label="Content">
         <article>
             <header class="header">
-                <h1 class="header-title">線形代数の学び直し[線形代数のエッセンス]</h1>
+                <h1 class="header-title">ABC221 C問題 別解</h1>
                 
                 
                 <div class="post-meta">
-                    <time datetime="2024-03-05T14:09:26&#43;09:00" itemprop="datePublished"> 2024/03/05 </time>
+                    <time datetime="2025-03-16T19:34:55&#43;09:00" itemprop="datePublished"> 2025/03/16 </time>
                 </div>
                 
             </header><div class="page-content">
-                <p>3Blue1Brownが出している線形代数のエッセンス(<a href="https://youtube.com/playlist?list=PL5WufEA7WHQGX7Su06JzbPDXUQGOd0wlq&amp;si=x98fuVYKHjpSN0PE">https://youtube.com/playlist?list=PL5WufEA7WHQGX7Su06JzbPDXUQGOd0wlq&amp;si=x98fuVYKHjpSN0PE</a>)が見ていて学び直しにとても役に立ったと感じました。学び直しだけでなく、これから線形代数を学ぶという方にもおすすめできる内容だと思いました。自分はこれを見て、今まで適当に線形代数をやっていたんだと思い知らされました。
-具体的には&hellip;</p>
+                <h1 id="abc221-c問題select-mul">ABC221 C問題　Select Mul</h1>
+<a href="https://atcoder.jp/contests/abc221/tasks/abc221_c" target="_blank">
+https://atcoder.jp/contests/abc221/tasks/abc221_c
+</a>
+<h1 id="想定解法">想定解法</h1>
+<p>各桁を並び替えて、その並び替えた数列のどこかに１つ区切りを挿入することを考える。各桁の並び替えの全探索と区切りの入れ方から計算量はO((L-1)L!)。(Lは桁数)</p>
+<h1 id="別解">別解</h1>
+<p>空の文字列A,Bに各桁の数字をどちらに、どのような順番で入れれば、A*Bが最大になるかを考える。まず、A,Bどちらかに数字を入れるときは数字のでかいものから入れるほうが良いということがわかる。そのため、各桁での数字を降順でソートしておく。次に各イテレーションでA,Bどちらにpushするのが最適かを考える必要があるが、結論から言うとこれは現時点でのA,Bを比較したときに値が小さい方にpushする方が良い。下の例のように処理を行う。赤下線がpushした数字で直前のA,B間の大小関係でどちらにpushするかを決めている。
+<img src="/abc221c.png" alt="abc221c　方針"><br>
+<strong>&lt;証明&gt;</strong><br>
+A,B($A \geqq B$)とpushする数字Xがある。<br>
+Aにpushした場合:
+$$
+(10A + X)\times B=10AB+BX
+$$
+Bにpushした場合:
+$$
+(10B+x)\times A=10AB+AX
+$$</p>
+<p>$A \geqq B$より、Bにpushした方が次の$A\times B$の値が大きくなる。終</p>
+<p>また、Nに0が含まれている場合は、その0を取り除いておき、後でpow(10,zero_count)を掛けてやれば良い。この方法における計算量は、ソートがボトルネックとなっているため、O(L*log(L))</p>
+<h1 id="考えたこと">考えたこと</h1>
 <ul>
-<li>Spanや基底ベクトルについての理解。特にspanが何を表しているのかをしっかり理解できました。</li>
-<li>正方行列、非正方行列の意味やそれによる変換がやっていることについて。平面上にある格子線が変形されていくアニメーションがとてもわかりやすい。</li>
-<li>行列式がなにを表しているか。</li>
-<li>内積や外積の意味について。特に内積がなぜ各要素の積の総和を取るのかがよくわかりました。</li>
-<li>クラメルの公式の導出をちゃんと理解できました。今まで丸暗記していました。。</li>
-<li>固有値や固有ベクトルが何を表しているかについて。定義からみてもなんとなくわかりますが、アニメーションによる説明で理解が深まりました。</li>
-<li>今まで適当にながしていた用語や数式の意味をある程度知ることが出来ました。(span,行列式,rank,trace,kernelなど)</li>
+<li>0があることに関しては、0である桁数さえ持っていれば取り除いてしまって良い。（一番末尾に0が来たほうが最適であることと、出力するものが掛け算であるために、A,Bどちらへの挿入でも結果は変わらないことから）</li>
+<li>各桁を降順ソートすること。(大きい数字をa,bの大きい位に入れていくため)</li>
+<li>「A,Bに大きい順で数字を交互に入れていけばいい？」と雑に考えたが、WA。反例は98321。9をA,8をBに入れた後、もう一度Bに8を入れる必要がある。</li>
 </ul>
-<p>これ以外にも、重要な知識や考え方が説明されていたので、定期的に復習し直すのが良いと思いました。</p>
 
             </div>
         </article></main>

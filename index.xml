@@ -6,7 +6,24 @@
     <description>Recent content on saity dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Jul 2024 18:19:18 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Mar 2025 19:34:55 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ABC221 C問題 別解</title>
+      <link>https://www.saity.dev/posts/abc221c_other_solution/</link>
+      <pubDate>Sun, 16 Mar 2025 19:34:55 +0900</pubDate>
+      
+      <guid>https://www.saity.dev/posts/abc221c_other_solution/</guid>
+      
+      <description>ABC221 C問題　Select Mul https://atcoder.jp/contests/abc221/tasks/abc221_c 想定解法 各桁を並び替えて、その並び替えた数列のどこかに１つ区切りを挿入することを考える。各桁の並び替えの全探索と区切りの入れ方から計算量はO((L-1)L!)。(Lは桁数)
+別解 空の文字列A,Bに各桁の数字をどちらに、どのような順番で入れれば、A*Bが最大になるかを考える。まず、A,Bどちらかに数字を入れるときは数字のでかいものから入れるほうが良いということがわかる。そのため、各桁での数字を降順でソートしておく。次に各イテレーションでA,Bどちらにpushするのが最適かを考える必要があるが、結論から言うとこれは現時点でのA,Bを比較したときに値が小さい方にpushする方が良い。下の例のように処理を行う。赤下線がpushした数字で直前のA,B間の大小関係でどちらにpushするかを決めている。 &amp;lt;証明&amp;gt;
+A,B($A \geqq B$)とpushする数字Xがある。
+Aにpushした場合: $$ (10A + X)\times B=10AB+BX $$ Bにpushした場合: $$ (10B+x)\times A=10AB+AX $$
+$A \geqq B$より、Bにpushした方が次の$A\times B$の値が大きくなる。終
+また、Nに0が含まれている場合は、その0を取り除いておき、後でpow(10,zero_count)を掛けてやれば良い。この方法における計算量は、ソートがボトルネックとなっているため、O(L*log(L))
+考えたこと 0があることに関しては、0である桁数さえ持っていれば取り除いてしまって良い。（一番末尾に0が来たほうが最適であることと、出力するものが掛け算であるために、A,Bどちらへの挿入でも結果は変わらないことから） 各桁を降順ソートすること。(大きい数字をa,bの大きい位に入れていくため) 「A,Bに大きい順で数字を交互に入れていけばいい？」と雑に考えたが、WA。反例は98321。9をA,8をBに入れた後、もう一度Bに8を入れる必要がある。 </description>
+      
+    </item>
+    
     <item>
       <title>ネスペ合格したので何やったかを簡単に書く</title>
       <link>https://www.saity.dev/posts/network_specialist/</link>
@@ -109,10 +126,7 @@ Indexを貼る N+1を解消する 無駄なDBへのアクセスを減らす(Redi
       <guid>https://www.saity.dev/about/</guid>
       
       <description>所属 明治大学大学院　先端数理科学研究科　先端メディアサイエンス専攻　M2
-やってきたこと プログラミング Pythonをよく書きます。主に機械学習、統計処理、webバックエンド実装(Django,Flask)、簡単な自動化プログラム、スクレイピングなどの用途で使用しています。 ReactやVueなどのフロントエンドのフレームワークも使用経験もあります。あとは競技プログラミングでC++、isuconでGo言語も多少やりますが熟練度や経験値はそこまで高くないです。 最近は競プロ関連でC++やRustの方に興味あり。
-機械学習,ディープラーニング 学部時代にpytorchで画像認識をしていました。今はChatGPTのような大規模言語モデルにも関心があります。イラストや写真などの画像生成(VAE,GAN)にも興味がありましたが、拡散モデルの普及以降、技術進歩が凄まじくてついていけてないです（単純に関心がなくなってきているというのもある）。
-NW,DB,仮想化などのインフラ技術 ネットワーク(DB)やデータベース(DB)系の技術に興味があります。特にNWに関しては、アプリケーション層のような身近に感じられるような技術から表面上隠蔽されて見えないような低層の技術(1,2,3,4層あたり)にまで全体的に関心があります。他のインフラ技術は興味はありますがまだまだ勉強不足です。今はプログラミングより、ここらへんの技術の座学や検証をメインでやっていることが多いです。
-今やっていること(2024.11/20) 競プロ(https://atcoder.jp/users/saity)。緑いきたい 研究 </description>
+今やっていること(2025.3/16) 競プロ(https://atcoder.jp/users/saity)。緑いきたい データ構造やアルゴリズムについての学習 今後やりたいこと ネットワークについての学習 コンピュータについて(OS,仮想化,データ構造,プログラミング言語など)の学習 </description>
       
     </item>
     
