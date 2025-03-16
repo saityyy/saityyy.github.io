@@ -52,7 +52,7 @@
         },
         "datePublished": "2025-03-16",
         "description": "",
-        "wordCount":  34 ,
+        "wordCount":  37 ,
         "mainEntityOfPage": "True",
         "dateModified": "2025-03-16",
         "image": {
@@ -173,8 +173,9 @@ stroke-linejoin="round" class="feather feather-home">
             </header><div class="page-content">
                 <h1 id="abc221-c問題select-mul">ABC221 C問題　Select Mul</h1>
 <a href="https://atcoder.jp/contests/abc221/tasks/abc221_c" target="_blank">
-https://atcoder.jp/contests/abc221/tasks/abc221_c
-</a>
+https://atcoder.jp/contests/abc221/tasks/abc221_c  
+</a>  
+<details><summary>答え↓</summary>  
 <h1 id="想定解法">想定解法</h1>
 <p>各桁を並び替えて、その並び替えた数列のどこかに１つ区切りを挿入することを考える。各桁の並び替えの全探索と区切りの入れ方から計算量はO((L-1)L!)。(Lは桁数)</p>
 <h1 id="別解">別解</h1>
@@ -191,14 +192,18 @@ $$
 (10B+x)\times A=10AB+AX
 $$</p>
 <p>$A \geqq B$より、Bにpushした方が次の$A\times B$の値が大きくなる。終</p>
-<p>また、Nに0が含まれている場合は、その0を取り除いておき、後でpow(10,zero_count)を掛けてやれば良い。この方法における計算量は、ソートがボトルネックとなっているため、O(L*log(L))</p>
+<p>また、Nに0が含まれている場合は、その0を取り除いておき、後でpow(10,zero_count)を掛けてやれば良い。この方法における計算量は、ソートがボトルネックとなっているため、O(L*log(L))<br>
+提出：</p>
+<a href="https://atcoder.jp/contests/abc221/submissions/63879675" target="_blank">
+https://atcoder.jp/contests/abc221/submissions/63879675
+</a>
 <h1 id="考えたこと">考えたこと</h1>
 <ul>
 <li>0があることに関しては、0である桁数さえ持っていれば取り除いてしまって良い。（一番末尾に0が来たほうが最適であることと、出力するものが掛け算であるために、A,Bどちらへの挿入でも結果は変わらないことから）</li>
 <li>各桁を降順ソートすること。(大きい数字をa,bの大きい位に入れていくため)</li>
 <li>「A,Bに大きい順で数字を交互に入れていけばいい？」と雑に考えたが、WA。反例は98321。9をA,8をBに入れた後、もう一度Bに8を入れる必要がある。</li>
 </ul>
-
+</details>
             </div>
         </article></main>
 </div>
