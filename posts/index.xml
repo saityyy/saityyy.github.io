@@ -6,7 +6,62 @@
     <description>Recent content in Posts on saity dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 16 Mar 2025 19:34:55 +0900</lastBuildDate><atom:link href="https://www.saity.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Mar 2025 18:12:08 +0900</lastBuildDate><atom:link href="https://www.saity.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>競プロ典型90問☆４ざっくりメモ</title>
+      <link>https://www.saity.dev/posts/typical90-star4/</link>
+      <pubDate>Tue, 25 Mar 2025 18:12:08 +0900</pubDate>
+      
+      <guid>https://www.saity.dev/posts/typical90-star4/</guid>
+      
+      <description>競プロ典型90問 https://atcoder.jp/contests/typical90
+☆４はatcoder problems Difficultyが800 ～ 1199、ABC換算だと400点問題(D問題)レベルらしい。 とりあえず全部やったので雑にメモ+振り返り
+https://atcoder.jp/contests/typical90/tasks/typical90_a 答え 最大の長さを求める問題から長さXを作れるかという判定問題に 二分探索
+欲しい値の取りうる範囲が大きい場合、それをlog(n)で出せる方法。
+欲しい値がちょうど条件の境界線にある場合に有効。
+ex.最大の中の最小値,条件を満たす中での最大値
+そのようなケースは数列の単調増加(減少)がある場合に見られる。数列ではなく、実数上でも有効
+https://atcoder.jp/contests/typical90/tasks/typical90_c 答え 木
+木の直径を求め、そこから最大の閉路を求める。
+木の直径は以下の手順で求める。
+1.任意の頂点から一番深い頂点をdfsで求める。それをuとする。
+2.uからもう一度dfsし、uから一番深い頂点をvとする。
+3.uからvまでのパスが木の直径
+https://atcoder.jp/contests/typical90/tasks/typical90_h 答え ナップサック問題
+各状態の個数を持っておきDP
+この場合は{&amp;ldquo;a&amp;rdquo;,&amp;ldquo;at&amp;rdquo;,&amp;ldquo;atc&amp;rdquo;,&amp;hellip;}のように文字をpushした時点での状態（個数）を保持
+https://atcoder.jp/contests/typical90/tasks/typical90_l 答え UnionFind
+赤マスの連結状態をチェック
+グリッド上での操作をグラフとしてみる。
+たどり着ける＝＞２端点は同じ連結成分
+https://atcoder.jp/contests/typical90/tasks/typical90_z 答え 木
+どの頂点も隣り合わない＝＞二部グラフ
+二部グラフを生成し、N/2より多いグループの頂点をN/2個出力
+二部グラフの特徴は奇数閉路を持たないこと。
+木は二部グラフ
+https://atcoder.jp/contests/typical90/tasks/typical90_ab 答え imos法
++&amp;hellip;.-..
+&amp;hellip;&amp;hellip;..
+&amp;hellip;&amp;hellip;..
+-&amp;hellip;.+..
+左から右への累積のあと、上から下への累積
+https://atcoder.jp/contests/typical90/tasks/typical90_ah 答え 尺取法
+実装詰まりがち
+とりあえず、半開区間を[l,r)として定義し、lをfor文で回しながらrをできるだけ右に持っていくような実装にする。
+https://atcoder.jp/contests/typical90/tasks/typical90_ap 答え メモ化再帰orDP
+DPだとO(k^2)になると勘違いしてた。
+https://atcoder.jp/contests/typical90/tasks/typical90_aq 答え 単純にBFSでやるとまずい
+例えば、vからuへの経路でくねくねしてる短い道と真っ直ぐの多い遠回りな道の２つがあるとする。
+頂点を一度しか調べない単純なbfsをした場合、uに先にたどり着くのは前者の経路であるが、実際は後者が最適経路。
+ダイクストラ法を用いる。
+priority_queueで方向転換回数が少ないものを優先的に取り出す。
+前述の例だと遠回りでも後者が先にuにたどり着いて最小コストを記録できる。
+拡張BFSでデータの持ち方を工夫しても出来るらしい。
+この場合、各頂点にどちらの方向を向いてるかの状態を保持させるといい。
+グリッド上での探索問題は様々なケースを考慮した上で最適なアルゴリズムやデータの持ち方を選択することが重要</description>
+      
+    </item>
+    
     <item>
       <title>ABC221 C問題 別解</title>
       <link>https://www.saity.dev/posts/abc221c_other_solution/</link>

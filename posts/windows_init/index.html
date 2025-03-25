@@ -130,13 +130,6 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/about/">
-                        About
-                    </a>
-                    
-                </li>
-                
-                <li>
                     <a class="menu-link active" href="/posts/">
                         Posts
                     </a>
@@ -180,9 +173,9 @@ stroke-linejoin="round" class="feather feather-home">
 <h1 id="インストールメディアを作成する">インストールメディアを作成する</h1>
 <p>16Gb以上のUSBを使ってWindowsのインストールメディアを作成します。<br>
 下記リンクにある上から３つ目の項目からISOファイルをダウンロードします。<br>
-<a href="https://www.microsoft.com/en-us/software-download/Windows11">https://www.microsoft.com/en-us/software-download/Windows11</a><br>
+<a href="https://www.microsoft.com/en-us/software-download/Windows11"  target="_blank" >https://www.microsoft.com/en-us/software-download/Windows11</a><br>
 続いて、rufusと呼ばれるisoファイルからインストールメディアを作成するツールをダウンロードします。<br>
-<a href="https://forest.watch.impress.co.jp/library/software/rufus/">https://forest.watch.impress.co.jp/library/software/rufus/</a><br>
+<a href="https://forest.watch.impress.co.jp/library/software/rufus/"  target="_blank" >https://forest.watch.impress.co.jp/library/software/rufus/</a><br>
 このrufusを起動して、先程ダウンロードしたisoファイルと使うUSBメモリを指定してインストールメディアを作成します。</p>
 <h1 id="windowsをインストールする">Windowsをインストールする</h1>
 <p>Bios画面を開き、指定のUSBが起動するように設定します。もう一度再起動すると、Windowsのインストール画面が表示されるので、決まった手順でインストールまで進めます。</p>
@@ -191,7 +184,7 @@ stroke-linejoin="round" class="feather feather-home">
 <pre tabindex="0"><code>winget install -e -i Git.Git
 </code></pre><p>(<font color="Red">注意</font>：wingetでこのコマンドを実行しても反応がなくて、うまくいかないことがありました。自分はwingetのバージョンを最新のものにすることで解消できました。<br>
 実際の手順は以下のブログが参考になるかもしれないです。<br>
-<a href="https://zenn.dev/kawamasato/articles/11c4477e101374">https://zenn.dev/kawamasato/articles/11c4477e101374</a>)</p>
+<a href="https://zenn.dev/kawamasato/articles/11c4477e101374"  target="_blank" >https://zenn.dev/kawamasato/articles/11c4477e101374</a>)</p>
 <h1 id="セットアップ用のシェルスクリプトファイルを実行する">セットアップ用のシェルスクリプトファイルを実行する。</h1>
 <p>インストールしたいツールやアプリのインストーラーを順番に実行していきます。
 git bashを開き、以下のコマンドを実行します。</p>

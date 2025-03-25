@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">競プロ典型90問☆４ざっくりメモ | saity dev</title>
+<meta property="og:title" content="競プロ典型90問☆４ざっくりメモ | saity dev" />
+<meta name="twitter:title" content="競プロ典型90問☆４ざっくりメモ | saity dev" />
+<meta itemprop="name" content="競プロ典型90問☆４ざっくりメモ | saity dev" />
+<meta name="application-name" content="競プロ典型90問☆４ざっくりメモ | saity dev" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="ja" />
+<meta name="language" content="ja" />
+
+
+
+  <meta itemprop="image" content="https://www.saity.dev/" />
+  <meta property="og:image" content="https://www.saity.dev/" />
+  <meta name="twitter:image" content="https://www.saity.dev/" />
+  <meta name="twitter:image:src" content="https://www.saity.dev/" />
+
+
+
+
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-03-25T18:12:08&#43;0900 />
+    <meta property="article:published_time" content=2025-03-25T18:12:08&#43;0900 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "競プロ典型90問☆４ざっくりメモ",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-03-25",
+        "description": "",
+        "wordCount":  112 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-03-25",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "saity dev"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.121.1">
+
+    
+
+    <link rel="canonical" href="https://www.saity.dev/posts/typical90-star4/">
+    <link href="/style.min.9bd04d0fad85388343088ec85e9afd787ea003e72914d7f57df39c17ab2e7173.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://www.saity.dev/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    </head>
+<body data-theme = "auto" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://www.saity.dev/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">競プロ典型90問☆４ざっくりメモ</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-03-25T18:12:08&#43;09:00" itemprop="datePublished"> 2025/03/25 </time>
+                </div>
+                
+            </header><div class="page-content">
+                <h1 id="競プロ典型90問">競プロ典型90問</h1>
+<p><a href="https://atcoder.jp/contests/typical90"  target="_blank" >https://atcoder.jp/contests/typical90</a></p>
+<p>☆４はatcoder problems Difficultyが800 ～ 1199、ABC換算だと400点問題(D問題)レベルらしい。
+とりあえず全部やったので雑にメモ+振り返り</p>
+<ol>
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_a"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_a</a></li>
+</ol>
+<details><summary>答え</summary>    
+最大の長さを求める問題から長さXを作れるかという判定問題に
+<p>二分探索<br>
+欲しい値の取りうる範囲が大きい場合、それをlog(n)で出せる方法。</p>
+<p>欲しい値がちょうど条件の境界線にある場合に有効。</p>
+<p>ex.最大の中の最小値,条件を満たす中での最大値</p>
+<p>そのようなケースは数列の単調増加(減少)がある場合に見られる。数列ではなく、実数上でも有効</p>
+</details>     
+<hr>
+<ol start="2">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_c"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_c</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>木</p>
+<p>木の直径を求め、そこから最大の閉路を求める。</p>
+<p>木の直径は以下の手順で求める。</p>
+<p>1.任意の頂点から一番深い頂点をdfsで求める。それをuとする。</p>
+<p>2.uからもう一度dfsし、uから一番深い頂点をvとする。</p>
+<p>3.uからvまでのパスが木の直径</p>
+</details>     
+<hr>
+<ol start="3">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_h"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_h</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>ナップサック問題</p>
+<p>各状態の個数を持っておきDP</p>
+<p>この場合は{&ldquo;a&rdquo;,&ldquo;at&rdquo;,&ldquo;atc&rdquo;,&hellip;}のように文字をpushした時点での状態（個数）を保持</p>
+</details>     
+<hr>
+<ol start="4">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_l"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_l</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>UnionFind</p>
+<p>赤マスの連結状態をチェック</p>
+<p>グリッド上での操作をグラフとしてみる。</p>
+<p>たどり着ける＝＞２端点は同じ連結成分</p>
+</details>     
+<hr>
+<ol start="5">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_z"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_z</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>木</p>
+<p>どの頂点も隣り合わない＝＞二部グラフ</p>
+<p>二部グラフを生成し、N/2より多いグループの頂点をN/2個出力</p>
+<p>二部グラフの特徴は奇数閉路を持たないこと。</p>
+<p>木は二部グラフ</p>
+</details>     
+<hr>
+<ol start="6">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_ab"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_ab</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>imos法</p>
+<p>+&hellip;.-..<br>
+&hellip;&hellip;..<br>
+&hellip;&hellip;..<br>
+-&hellip;.+..</p>
+<p>左から右への累積のあと、上から下への累積</p>
+</details>     
+<hr>
+<ol start="7">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_ah"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_ah</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>尺取法</p>
+<p>実装詰まりがち</p>
+<p>とりあえず、半開区間を[l,r)として定義し、lをfor文で回しながらrをできるだけ右に持っていくような実装にする。</p>
+</details>     
+<hr>
+<ol start="8">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_ap"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_ap</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>メモ化再帰orDP</p>
+<p>DPだとO(k^2)になると勘違いしてた。</p>
+</details>     
+<hr>
+<ol start="9">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_aq"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_aq</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>単純にBFSでやるとまずい</p>
+<p>例えば、vからuへの経路でくねくねしてる短い道と真っ直ぐの多い遠回りな道の２つがあるとする。</p>
+<p>頂点を一度しか調べない単純なbfsをした場合、uに先にたどり着くのは前者の経路であるが、実際は後者が最適経路。</p>
+<p>ダイクストラ法を用いる。</p>
+<p>priority_queueで方向転換回数が少ないものを優先的に取り出す。</p>
+<p>前述の例だと遠回りでも後者が先にuにたどり着いて最小コストを記録できる。</p>
+<p>拡張BFSでデータの持ち方を工夫しても出来るらしい。</p>
+<p>この場合、各頂点にどちらの方向を向いてるかの状態を保持させるといい。</p>
+<p>グリッド上での探索問題は様々なケースを考慮した上で最適なアルゴリズムやデータの持ち方を選択することが重要</p>
+</details>     
+<hr>
+<ol start="10">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_bf"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_bf</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>ボタンを2^x回押した時の今表示されている数字の遷移先を考える。2^x回の遷移先は2^(x-1)の遷移を２回行ったものであることがポイント。</p>
+<p>この情報はx&lt;=60まで見て記録すればいい。</p>
+<p>あとは、Kの立っているbitに応じて2^x回押した時の遷移先を参照していけば、最終的にK回押した時の数字の遷移になるはず</p>
+<p>同じ処理を10^18回ほど繰り返す問題は大体bitごとに考えるのがいい気がする。</p>
+<p>もしくは、二倍ずつや半分ずつにするような反復処理を考えて、その中に何か法則性がないかを模索するのが良い。</p>
+<p>Kがとんでもなくでかい数字だったら通用しない</p>
+<p>想定解答は周期性を見つけるとのこと</p>
+</details>     
+<hr>
+<ol start="11">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_bk"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_bk</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>bit全探索</p>
+<p>明らかにHが少ないことに気づけば解ける。</p>
+<p>全探索のうちの１つに着目して、問題を簡略化する。</p>
+<p>この場合、同じ数字で構成された列の個数のうち、一番多かった列の個数を求める。</p>
+</details>     
+<hr>
+<ol start="12">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_br"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_br</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>x,yは独立に考えることが出来る。</p>
+<p>マンハッタン距離の総和が最小となる点は中央値</p>
+</details>     
+<hr>
+<ol start="13">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_bt"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_bt</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>すべての経路を再現する。バックトラック</p>
+<p>再帰関数を用いる。</p>
+<p>関数に潜る前にvisitedをtrueに、帰ってきたらfalseにする。</p>
+<p>visited[{ny,nx}]=true;</p>
+<p>dfs({ny,nx},visited);</p>
+<p>visited[{ny,nx}]=false;</p>
+</details>     
+<hr>
+<ol start="14">
+<li><a href="https://atcoder.jp/contests/typical90/tasks/typical90_cg"  target="_blank" >https://atcoder.jp/contests/typical90/tasks/typical90_cg</a></li>
+</ol>
+<details><summary>答え</summary>    
+<p>約数の個数を記録</p>
+<p>その中でfor文を回す。</p>
+<p>約数の個数が少ないことに気づけるかどうか</p>
+<p>例2^32=&gt;33個、10^12=&gt;13*13=169個</p>
+</details>     
+<hr>
+<h1 id="振り返り">振り返り</h1>
+<p>これらをすべてやってみて、以下の点が今の自分に足りないと感じた。</p>
+<ul>
+<li>ダイクストラ法や拡張BFSの理解や実装</li>
+<li>区間問題になると実装が詰まる</li>
+<li>整数問題は様々なアプローチを考えてしまい、最適な解法にすぐたどり着かない。</li>
+<li>再帰で考える問題はバグらせがち</li>
+</ul>
+<p>とはいえやっててあまり苦戦しなかったから、これからは応用力をつけるように精進する。<br>
+あと実装力や早解き力も上げたい。（多分これがネック）<br>
+ABCの過去問で緑パフォを安定して出せるぐらいになったら典型☆５に取り組む。</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/saityyy" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com/sec200091" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 saityyy.
+        
+    </small>
+</footer>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script><a href="#" title="" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script src="https://www.saity.dev/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>
