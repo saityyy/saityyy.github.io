@@ -6,7 +6,23 @@
     <description>Recent content on saity dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 Mar 2025 18:12:08 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 May 2025 16:14:51 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>同一ネットワーク上にあるホストからWSLへHTTPリクエストを送る</title>
+      <link>https://www.saity.dev/posts/local_network_device_to_wsl/</link>
+      <pubDate>Sun, 18 May 2025 16:14:51 +0900</pubDate>
+      
+      <guid>https://www.saity.dev/posts/local_network_device_to_wsl/</guid>
+      
+      <description>はじめに 同一ネットワーク上にあるUbuntuサーバーからWSLで起動したAPIサーバーにHTTPリクエストを送ろうとしたらうまくできなかった。すぐ終わりそうだと思ったら意外とハマったのでメモしとく。
+概要 簡単に書くと上図のような構成になっている。今回うまくいかなかった、またはよく分からなかったのは以下の部分。
+リクエスト先として指定するIPアドレス どこでリクエストがブロックされているのか(Windowsマシンに届く前か、WSLに届く前か) 解決法 まず大前提として、リクエスト先のIPアドレスはWSLのIPアドレスではなく、WindowsのIPアドレスを指定する。これはipconfigコマンドで知ることができる。となると、Windowsマシンでポートを一時的に開ける必要があることもわかる。今回はひとまず、TCPの18080を開放した。次はWindowsでのIPアドレスとポートをWSLのIPアドレスとポートにマッピングするような設定を行う必要がある。これはnetshコマンドを使って以下のように設定できる。
+# 192.168.1.yyy:18080 =&amp;gt; 192.168.zzz.zzz:8080 netsh interface portproxy add v4tov4 listenport=18080 listenaddr=192.168.1.yyy connectport=8080 connectaddress=192.168.zzz.zzz # 設定できているか確認 netsh interface portproxy show all これでUbuntuサーバーからWindowsマシンのIPアドレスとポートを指定してリクエストを送ると、WSLで起動したAPIサーバーにリクエストが届くようになる。
+感想 WSLのネットワーク事情だったりIP層の基礎的なところがよくわかってなかったのでかなり手こずってしまった。次回はもう少しいい感じに問題解決できるようにしたい。
+参考 wsl2 で立てたサーバーにローカルネットワーク内の他の端末からアクセスする Windows内のネットワークを整理：②WSL2編 Windows/Linuxでポートフォワーディングする方法 </description>
+      
+    </item>
+    
     <item>
       <title>競プロ典型90問☆４ざっくりメモ</title>
       <link>https://www.saity.dev/posts/typical90-star4/</link>
