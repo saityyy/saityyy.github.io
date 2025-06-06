@@ -6,7 +6,26 @@
     <description>Recent content on saity dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 18 May 2025 16:14:51 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jun 2025 20:01:49 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大きいデータが経路上で複数のデータに分割されるところをWiresharkで眺める</title>
+      <link>https://www.saity.dev/posts/check_ip_fragmentation/</link>
+      <pubDate>Fri, 06 Jun 2025 20:01:49 +0900</pubDate>
+      
+      <guid>https://www.saity.dev/posts/check_ip_fragmentation/</guid>
+      
+      <description>はじめに 大きいデータを送信すると、経路上でデータが複数に分割されることがある(IPフラグメンテーション)。これをWiresharkで実際に確かめたい。
+手順 Wiresharkを起動して、パケットをキャプチャする。フィルタリングは以下のようにすればいい。 ip.addr==&amp;lt;任意のIPアドレス&amp;gt; 以下のPythonコードを実行して、UDPパケットを送信する。 import socket # 送信先のIPアドレスとポート番号 UDP_IP = &amp;#34;任意のIPアドレス&amp;#34; # ※ループバックアドレスは使わないこと UDP_PORT = 5005 # 65,000バイトのデータを作成 MESSAGE = b&amp;#34;A&amp;#34; * 65000 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) sock.sendto(MESSAGE, (UDP_IP, UDP_PORT)) print(f&amp;#34;Sent {len(MESSAGE)} bytes to {UDP_IP}:{UDP_PORT}&amp;#34;) ※注意点 udp.port==5005とフィルタリングするとうまくいかない
+今回見たいのは、送信するUDPデータグラムとそれらが分割されてできた複数のIPパケットである。そのため、UDPポートでフィルタリングしてしまうと、portフィールドがあるUDPデータグラムしか表示されない。IPパケットはUDPのヘッダがないので、フィルタリングで弾かれてしまう。
+ループバックアドレスだとうまくいかない
+最初はsenderとreceiverを用意してデータグラムを送受信させるプログラムを書いたが、この場合だとうまくいかなかった。ループバックアドレスはルーターを経由しないため、そもそもIPパケットが分割されないという可能性がある。
+結果 以下のようにいくつかのIPパケットとそれらが構成されてできたUDPデータグラムが表示される。 今回は送信側のキャプチャ結果を示しているので、IPパケットの順序は基本的にオフセットの小さい順になっている。ちなみにオフセットの間隔は1480バイトとなっているが、これは一度に送れるIPパケットの最大サイズ(MTU)が1500バイトで、そこからIPヘッダのサイズを引いた値である。
+まとめ 本当は受信側でやりたかったが、ループバックアドレスを使うとIPフラグメンテーションが起きないため、ひとまず送信側でやった。 受信側でやるとIPパケットの到着順序がばらばらになったり、そこから送信時の順序通りに正しく再構築されることを確認できるので面白いと思う。気が向いたらやってみたい。
+参考 Wireshark Fragmented Packet Capturing
+https://youtu.be/1gX_-DqGNxA?si=cG_gh3P9YuzK1k5L</description>
+      
+    </item>
+    
     <item>
       <title>同一ネットワーク上にあるUbuntuサーバーからWSLへHTTPリクエストを送る</title>
       <link>https://www.saity.dev/posts/local_network_device_to_wsl/</link>
@@ -72,9 +91,9 @@ https://atcoder.jp/contests/typical90/tasks/typical90_aq 答え 単純にBFSで�
 ダイクストラ法を用いる。
 priority_queueで方向転換回数が少ないものを優先的に取り出す。
 前述の例だと遠回りでも後者が先にuにたどり着いて最小コストを記録できる。
-拡張BFSでデータの持ち方を工夫しても出来るらしい。
 この場合、各頂点にどちらの方向を向いてるかの状態を保持させるといい。
-グリッド上での探索問題は様々なケースを考慮した上で最適なアルゴリズムやデータの持ち方を選択することが重要</description>
+グリッド上での探索問題は様々なケースを考慮した上で最適なアルゴリズムやデータの持ち方を選択することが重要
+https://atcoder.jp/contests/typical90/tasks/typical90_bf 答え ボタンを2^x回押した時の今表示されている数字の遷移先を考える。2^x回の遷移先は2^(x-1)の遷移を２回行ったものであることがポイント。</description>
       
     </item>
     

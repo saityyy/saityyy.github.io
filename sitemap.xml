@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.saity.dev/posts/</loc>
-    <lastmod>2025-05-18T16:14:51+09:00</lastmod>
+    <lastmod>2025-06-06T20:01:49+09:00</lastmod>
   </url><url>
     <loc>https://www.saity.dev/</loc>
-    <lastmod>2025-05-18T16:14:51+09:00</lastmod>
+    <lastmod>2025-06-06T20:01:49+09:00</lastmod>
+  </url><url>
+    <loc>https://www.saity.dev/posts/check_ip_fragmentation/</loc>
+    <lastmod>2025-06-06T20:01:49+09:00</lastmod>
   </url><url>
     <loc>https://www.saity.dev/posts/local_network_device_to_wsl/</loc>
     <lastmod>2025-05-18T16:14:51+09:00</lastmod>
