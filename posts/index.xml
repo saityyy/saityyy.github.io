@@ -8,7 +8,7 @@
     <language>ja</language>
     <lastBuildDate>Fri, 06 Jun 2025 20:01:49 +0900</lastBuildDate><atom:link href="https://www.saity.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>大きいデータが経路上で複数のデータに分割されるところをWiresharkで眺める</title>
+      <title>IPフラグメンテーションが起こる様子をWiresharkで確認する</title>
       <link>https://www.saity.dev/posts/check_ip_fragmentation/</link>
       <pubDate>Fri, 06 Jun 2025 20:01:49 +0900</pubDate>
       
