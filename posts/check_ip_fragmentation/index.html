@@ -181,7 +181,7 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span class="line"><span class="cl"><span class="n">UDP_PORT</span> <span class="o">=</span> <span class="mi">5005</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 65,000バイトのデータを作成</span>
-</span></span><span class="line"><span class="cl"><span class="n">MESSAGE</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;A&#34;</span> <span class="o">*</span> <span class="mi">65000</span>
+</span></span><span class="line"><span class="cl"><span class="n">MESSAGE</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;</span> <span class="o">*</span> <span class="mi">1000</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">sock</span><span class="o">.</span><span class="n">sendto</span><span class="p">(</span><span class="n">MESSAGE</span><span class="p">,</span> <span class="p">(</span><span class="n">UDP_IP</span><span class="p">,</span> <span class="n">UDP_PORT</span><span class="p">))</span>

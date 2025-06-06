@@ -15,7 +15,7 @@
       <guid>https://www.saity.dev/posts/check_ip_fragmentation/</guid>
       
       <description>はじめに 大きいデータを送信すると、経路上でデータが複数に分割されることがある(IPフラグメンテーション)。これをWiresharkで実際に確かめたい。
-手順 Wiresharkを起動して、パケットをキャプチャする。フィルタリングは以下のようにすればいい。 ip.addr==&amp;lt;任意のIPアドレス&amp;gt; 以下のPythonコードを実行して、UDPパケットを送信する。 import socket # 送信先のIPアドレスとポート番号 UDP_IP = &amp;#34;任意のIPアドレス&amp;#34; # ※ループバックアドレスは使わないこと UDP_PORT = 5005 # 65,000バイトのデータを作成 MESSAGE = b&amp;#34;A&amp;#34; * 65000 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) sock.sendto(MESSAGE, (UDP_IP, UDP_PORT)) print(f&amp;#34;Sent {len(MESSAGE)} bytes to {UDP_IP}:{UDP_PORT}&amp;#34;) ※注意点 udp.port==5005とフィルタリングするとうまくいかない
+手順 Wiresharkを起動して、パケットをキャプチャする。フィルタリングは以下のようにすればいい。 ip.addr==&amp;lt;任意のIPアドレス&amp;gt; 以下のPythonコードを実行して、UDPパケットを送信する。 import socket # 送信先のIPアドレスとポート番号 UDP_IP = &amp;#34;任意のIPアドレス&amp;#34; # ※ループバックアドレスは使わないこと UDP_PORT = 5005 # 65,000バイトのデータを作成 MESSAGE = b&amp;#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;#34; * 1000 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) sock.sendto(MESSAGE, (UDP_IP, UDP_PORT)) print(f&amp;#34;Sent {len(MESSAGE)} bytes to {UDP_IP}:{UDP_PORT}&amp;#34;) ※注意点 udp.port==5005とフィルタリングするとうまくいかない
 今回見たいのは、送信するUDPデータグラムとそれらが分割されてできた複数のIPパケットである。そのため、UDPポートでフィルタリングしてしまうと、portフィールドがあるUDPデータグラムしか表示されない。IPパケットはUDPのヘッダがないので、フィルタリングで弾かれてしまう。
 ループバックアドレスだとうまくいかない
 最初はsenderとreceiverを用意してデータグラムを送受信させるプログラムを書いたが、この場合だとうまくいかなかった。ループバックアドレスはルーターを経由しないため、そもそもIPパケットが分割されないという可能性がある。
