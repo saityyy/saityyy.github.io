@@ -6,7 +6,31 @@
     <description>Recent content on saity dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 06 Jun 2025 20:01:49 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Nov 2025 10:59:32 +0900</lastBuildDate><atom:link href="https://www.saity.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux環境でのDockerマウント時のパーミッション問題について調査してみた</title>
+      <link>https://www.saity.dev/posts/docker-mount-permission/</link>
+      <pubDate>Sat, 01 Nov 2025 10:59:32 +0900</pubDate>
+      
+      <guid>https://www.saity.dev/posts/docker-mount-permission/</guid>
+      
+      <description>はじめに Dockerコンテナでホストのディレクトリをマウントする際、パーミッションの問題に直面することがあります。具体的にはコンテナ側でマウントしたデータが読み込めなかったり、コンテナで作成したものをホスト側で編集できなかったりなどのケースがあります。UbuntuDesktop環境で実際にいろいろ試してみて、そのよう問題について調査したのでそれを共有します。
+確認したいこと ホスト側とコンテナ側でのパーミッションの違いがあるかどうか ホスト側（またはコンテナ側）で権限を変更した場合、どちらにも反映されるか ホスト側(またはコンテナ側)でファイルやディレクトリを作成したとき、もう片方では読み込めるか コンテナを２つ立てて同じように起動すれば、相互でファイルやディレクトリを読み込むことができるか 1. ホスト側とコンテナ側のパーミッションの違い shareディレクトリをホスト側で作成し、コンテナ側にマウントする。
+secはホスト側のユーザー名です。
+ホスト:
+&amp;gt;ls -al drwxrwx--- 2 sec sec 4096 11月 1 16:22 share コンテナ:
+&amp;gt;ls-al drwxrwx--- 2 1000 1000 4096 Nov 1 07:22 share secユーザーのidを確認する。
+sec@sec-System-Product-Name:~/test/docker_bind_mound$ id uid=1000(sec) gid=1000(sec) groups=1000(sec),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),114(lpadmin),984(docker) user_id,group_id,permissionも一致している ホストのuser_id,group_id,パーミッションがそのままコンテナのディレクトリに反映されることがわかる。
+2. ホスト側（またはコンテナ側）で権限を変更した場合、どちらにも反映されるか まずコンテナ側でpermissionを770=&amp;gt;700に変更してみる
+その操作の後、ホスト側でパーミッションを確認する
+&amp;gt;ls -al drwx------ 2 sec sec 4096 11月 1 16:22 share 変更されている。 user_id,group_idが同じだからできるっぽい。
+今度はホスト側でpermissionを700=&amp;gt;770に戻してみる。 その操作の後、コンテナ側でパーミッションを確認した。
+=&amp;gt;ちゃんと770に戻っている。
+3. ホスト側(またはコンテナ側)でファイルやディレクトリを作成したとき、もう片方では読み込めるか コンテナ側でファイルを作成してみる。
+root@08e5c8531d86:/app/share# touch test.txt root@08e5c8531d86:/app/share# ls -al -rw-r--r-- 1 root root 0 Nov 1 07:38 test.</description>
+      
+    </item>
+    
     <item>
       <title>IPフラグメンテーションが起こる様子をWiresharkで確認する</title>
       <link>https://www.saity.dev/posts/check_ip_fragmentation/</link>
